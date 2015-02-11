@@ -19,14 +19,15 @@
         var loadedAt = +new Date;
         setTimeout(function() {
             if (+new Date - loadedAt < 1000){
-              try {
-                window.location = appstoreFail;
-              } catch(e) { }
+              window.location = appstoreFail;
             }
           }
-        ,25);
+        , 25);
         //Try launching the app using URL schemes
-        window.open(appUrlScheme,"_self");
+        try {
+          window.open(appUrlScheme,"_self");
+        } catch(e) {}
+        
     } else {
         //Launch the website
         window.location = "http://www.google.fr";
