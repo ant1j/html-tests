@@ -7,11 +7,11 @@
     <title>Redirecting ...</title>
 
     <script>
-      var appstoreFail = "www.your_redirect_website.com";
+    var appstoreFail = "www.claravista.fr";
 
     //Check is device is iOS
     var iOS = (navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-    var appUrlScheme = "xyz_app://";
+    var appUrlScheme = "twitter://post?message=COOKIE_IS_GOOD_FOR_YOUR_HEALTH";
 
     if (iOS)
     {
@@ -28,7 +28,7 @@
         window.open(appUrlScheme,"_self");
     } else {
         //Launch the website
-        window.location = weblink;
+        window.location = "www.google.fr";
     }
     </script>
   </head>
