@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test du tracking</title>
+	
+<script type="text/javascript" async=1>
+//initialisation du tracker
+;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[];p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments)};p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1;n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","//d34fy04abkfw5.cloudfront.net/jslib/sp.js","snowplow"));
+
+window.snowplow('newTracker','testAJ','ab5.claratracking.fr',{
+	appId: 'AJtests',	
+	respectDoNotTrack: true, 
+	cookieDomain: null
+});
+
+// Variable Cookie ID Webediads à définir par Allociné (type string)
+window.snowplow('setUserId', 'userIDDeMoiSeulEtUnique');
+
+/* 
+Evénement de tracking
+Snowplow('trackStructEvent', 'category page', 'id', 'label', 'property', 'value');
+	'trackStructEvent' : fonction d'appel événement
+	'category page' = site_route (issue de la dataLayer) – obligatoire
+	'id' = movie_id (issue de la dataLayer) – obligatoire
+	'label' = video_id (issue de la dataLayer) – facultatif
+	'property' = user_activity (issue de la dataLayer) – facultatif
+	'value' = 0
+*/
+
+window.snowplow('trackStructEvent', 
+	"site_route", 
+	"movie_id", 
+	"video_id", 
+	"user_activity",
+	Date.now()
+);
+</script>
+
+</head>
+<body>
+	What a body!
+</body>
+</html>
